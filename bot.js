@@ -10,9 +10,9 @@ console.log('Setup √')
 
 bot.on('message', (message) => {
 	if (message.author.id === bot.user.id) return
-	if (!message.content.startsWith(cred.prefix)) return
+	if (!message.content.startsWith(settings.prefix)) return
 	const args = message.content.split(' ')
-	const command = args.shift().slice(cred.prefix.length)
+	const command = args.shift().slice(settings.prefix.length)
 		try {
 			let cmdFile = require('./commands/' + command)
 			cmdFile.run(bot, message, args)
