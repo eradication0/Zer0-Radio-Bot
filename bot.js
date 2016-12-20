@@ -18,7 +18,7 @@ bot.on('message', (message) => {
 		let cmdFile = require('./commands/' + command); // requires all files in the commands folder
 		cmdFile.run(bot, message, args); // Runs the command
 	} catch (e) {
-		fileLog(e + '\n'); // Occuring errors will be stored in the log.txt
+		console.log(e + '\n'); // Occuring errors will be stored in the log.txt
 	}
 }
 
