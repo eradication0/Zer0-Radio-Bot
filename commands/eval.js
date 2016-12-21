@@ -1,5 +1,5 @@
 exports.run = function(bot, message, args) {
-	if (message.author.id === 'PUT YOUR ID HERE') {
+	if (message.author.id === '64438454750031872') {
 		try {
 			const com = eval(message.content.split(" ").slice(1).join(" "))
 			message.channel.sendMessage('```\n' + com + '```')
