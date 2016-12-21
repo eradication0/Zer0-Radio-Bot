@@ -19,6 +19,15 @@ bot.on('message', (message) => {
 		} catch (e) {
 			console.log(e + '\n')
 	}
+
+	if (message.content.startsWith('0eval') && message.author.id === '64438454750031872') {
+		try {
+			const com = eval(message.content.split(" ").slice(1).join(" "))
+			message.channel.sendMessage('```\n' + com + '```')
+		} catch (e) {
+			message.channel.sendMessage('```\n' + e + '```')
+		}
+	}
 })
 
 console.log('Commands loaded √')

@@ -1,7 +1,20 @@
 exports.run = function(bot, message, args) {
-  var currentVoice = bot.channels.get("260885677066027019")
-  currentVoice.join()
+  const audioFolder = './audio/';
+  const rand = require('random-int')
+  const fs = require('fs');
+  var audioFiles = fs.readdirSync(audioFolder)
+  var randomPlay = rand(0, audioFiles.length)
+
+  bot.channels.get(message.member.voiceChannelID).join()
   .then(connection => {
-   const dispatcher = connection.playFile('C:/Users/Dominator/Documents/GitHub/zero-radio/audio/sanic.mp3');
+   const dispatcher = connection.playFile('./audio/' + audioFiles[randomPlay])
+   .on('end', () => {
+     randomPlay = rand(0, audioFiles.length)
+     connection.playFile('./audio/' + audioFiles[randomPlay])
+   })
+   .on('error', err => {
+     randomPlay = rand(0, audioFiles.length)
+     connection.playFile('./audio/' + audioFiles[randomPlay])
+   })
   })
 }

@@ -3,6 +3,7 @@
     "discord.js": "^10.0.1",
     "fs": "0.0.1-security",
     "node-opus": "^0.2.4",
-    "opusscript": "0.0.1"
+    "opusscript": "0.0.1",
+    "random-int": "^1.0.0"
   }
 }
