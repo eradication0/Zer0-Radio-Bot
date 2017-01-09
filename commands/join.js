@@ -1,3 +1,7 @@
 exports.run = function(bot, message, args) {
-		bot.channels.get(args[0]).join()
+	if (bot.channels.get(message.member.voiceChannelID)) {
+		bot.channels.get(message.member.voiceChannelID).join()
+	} else {
+		message.channel.sendMessage('You are not in a voice channel. Join a voice channel and try ``0join`` again.');
+	}
 }

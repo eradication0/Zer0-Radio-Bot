@@ -1,9 +1,11 @@
 {
   "dependencies": {
-    "discord.js": "^10.0.1",
+    "discord.js": "^11.0.0",
     "fs": "0.0.1-security",
     "node-opus": "^0.2.4",
     "opusscript": "0.0.1",
-    "random-int": "^1.0.0"
+    "random-hex-color": "^1.0.1",
+    "random-int": "^1.0.0",
+    "ytdl-core": "^0.7.21"
   }
 }
